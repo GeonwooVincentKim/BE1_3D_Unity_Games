@@ -8,11 +8,17 @@ public class PlayerBall : MonoBehaviour
     public int itemCount;
     bool isJump;
     Rigidbody rigid;
+    AudioSource Audio;
 
     void Awake()
     {
         isJump = false;
         rigid = GetComponent<Rigidbody>();
+
+        // It would be better to Initialize Variable in Awake Function.
+        Audio = GetComponent<AudioSource>();
+        // Audio.Play();
+
     }
 
     void Update()
@@ -36,5 +42,16 @@ public class PlayerBall : MonoBehaviour
     {
         if (collision.gameObject.name == "Floor")
             isJump = false;
+    }
+
+    // 'PlayerBall.cs' will play Music instead of play in 'ItemCan.cs'.
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.name == "Item")
+        {
+            itemCount++;
+            Audio.Play();
+            other.gameObject.SetActive(false);
+        }
     }
 }
