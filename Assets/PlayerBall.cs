@@ -50,6 +50,7 @@ public class PlayerBall : MonoBehaviour
         if (other.name == "Item")
         {
             itemCount++;
+            AudioListener.volume = 0.5f;
             Audio.Play();
             other.gameObject.SetActive(false);
         }
