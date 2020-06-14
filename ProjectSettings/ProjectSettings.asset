@@ -639,6 +639,7 @@ PlayerSettings:
       daydreamIconForeground: {fileID: 0}
       daydreamIconBackground: {fileID: 0}
   cloudServicesEnabled:
+    Collab: 0
     UNet: 1
   luminIcon:
     m_Name: 
@@ -652,10 +653,10 @@ PlayerSettings:
     m_VersionCode: 1
     m_VersionName: 
   apiCompatibilityLevel: 6
-  cloudProjectId: 
+  cloudProjectId: 9483c098-e215-40d8-9477-a4438c81b9a9
   framebufferDepthMemorylessMode: 0
-  projectName: 
-  organizationId: 
+  projectName: BE1_3D_Game
+  organizationId: kdsnop
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0

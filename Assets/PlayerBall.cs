@@ -8,6 +8,7 @@ public class PlayerBall : MonoBehaviour
     public float JumpPower;
     public int itemCount;
     public GameManagerLogic manager;
+    
 
     bool isJump;
     Rigidbody rigid;
@@ -59,17 +60,30 @@ public class PlayerBall : MonoBehaviour
         }
         else if(other.tag == "Point")
         {
+
             // It is better to avoid to use Find Function
             // GameObject.Find();
-            if(itemCount == manager.TotalItemCount)
+            if (itemCount == manager.TotalItemCount)
             {
-                // Show result as 'Game Clear!'
-                SceneManager.LoadScene("Example1_1");
+                Debug.Log(manager.TotalItemCount);
+                // Show result as 'Game Clear!' and Next Stage.
+                // ToString() is the safe way when Overload String Value.
+                if (manager.stage == 2)
+                {
+                    // SceneManager.LoadScene("Example1_0");
+                    SceneManager.LoadScene(0);
+                }
+                else
+                {
+                    // SceneManager.LoadScene("Example1_" + (manager.stage + 1).ToString());
+                    SceneManager.LoadScene(manager.stage + 1);
+                }
             }
             else
             {
                 // Restart the game.
-                SceneManager.LoadScene("Example1_0");
+                // SceneManager.LoadScene("Example1_" + manager.stage.ToString());
+                SceneManager.LoadScene(manager.stage);
             }
         }
     }
