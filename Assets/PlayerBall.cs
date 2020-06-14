@@ -57,6 +57,10 @@ public class PlayerBall : MonoBehaviour
             AudioListener.volume = 0.5f;
             Audio.Play();
             other.gameObject.SetActive(false);
+            // When Player Get Player Item, 
+            // it brings GetItem Function from 'GameManagerLogic.cs'.
+            // And GetItem Function already have Parameter named itemCount.
+            manager.GetItem(itemCount);
         }
         else if(other.tag == "Point")
         {
