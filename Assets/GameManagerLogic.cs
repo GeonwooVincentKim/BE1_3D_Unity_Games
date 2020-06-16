@@ -33,8 +33,9 @@ public class GameManagerLogic : MonoBehaviour
     {
         // You can put Stage name only.
         // Or you can put "stage" variable only.
-        if (other.gameObject.tag == "Player")
-            SceneManager.LoadScene(stage);
-
+        if (other.gameObject.tag == "Player") {
+            // It Seems it doesn't need to use this code..
+            //SceneManager.LoadScene(stage);
+        }
     }
 }
